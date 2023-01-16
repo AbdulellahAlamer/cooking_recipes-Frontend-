@@ -1,4 +1,3 @@
-const recipeContainer = document.querySelector('.recipe');
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import ResultView from './views/resultView';
@@ -6,7 +5,6 @@ import './views/recipeView.js';
 import 'core-js/stable';
 import SearchView from './views/searchView';
 import 'regenerator-runtime/runtime';
-import { async } from 'regenerator-runtime';
 import Pagination from './views/paginationView';
 import bookmark from './views//bookmarksView';
 import resultView from './views/resultView';
@@ -48,6 +46,7 @@ const controllSearch = async function () {
     ResultView.render(model.getSearchResultPage()); // "model.getSearchResultPage()" return an array
 
     Pagination.render(model.state.search);
+    console.log(model.state.search.query, 'nnnnnnnnn');
   } catch (err) {
     alert('controllSearch \n line 36-40');
   }
@@ -102,6 +101,3 @@ const int = function () {
   addRecipeView.addHandlerUpload(controllAddRecipe);
 };
 int();
-// (() => {
-//   recipeView.addHandlerRender(controllRecipe);
-// })();
