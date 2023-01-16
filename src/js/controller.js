@@ -18,6 +18,7 @@ const controllRecipe = async function () {
   try {
     const hach = window.location.hash.slice(1);
     if (!hach) return;
+    console.log('hahahahahhahahahha');
     recipeView.renderSpener();
 
     ResultView.update(model.getSearchResultPage());
