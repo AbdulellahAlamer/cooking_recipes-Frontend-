@@ -19,7 +19,11 @@ class Pagination extends View {
     const numPages = Math.ceil(
       this._data.result.length / this._data.resultPerPage
     );
-    console.log(numPages, curPage);
+    const viewCurentPage = `
+    <div class="message">
+      <span>${curPage} of ${numPages}</span>
+    </div>
+    `;
 
     //  'Page1 , and there are other pages';
     if (curPage === 1 && numPages > 1) {
@@ -32,6 +36,7 @@ class Pagination extends View {
                 <use href="${icons}#icon-arrow-right"></use>
             </svg>
         </button>
+        ${viewCurentPage}
         `;
     }
     //  'last page';
@@ -45,6 +50,7 @@ class Pagination extends View {
           </svg>
               <span>Page ${curPage - 1}</span>
       </button>
+      ${viewCurentPage}
       `;
     }
     //  'other pages';
@@ -66,6 +72,7 @@ class Pagination extends View {
           </svg>
               <span>Page ${curPage - 1}</span>
         </button>
+        ${viewCurentPage}
         `;
     }
     //  'only  1 page';

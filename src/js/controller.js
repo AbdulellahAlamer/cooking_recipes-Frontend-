@@ -1,5 +1,4 @@
 const recipeContainer = document.querySelector('.recipe');
-
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import ResultView from './views/resultView';
