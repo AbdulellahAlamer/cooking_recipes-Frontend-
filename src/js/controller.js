@@ -12,7 +12,7 @@ import Pagination from './views/paginationView';
 import bookmark from './views//bookmarksView';
 import resultView from './views/resultView';
 import addRecipeView from './views/addRecipeView.js';
-import MODAL_CLISE_SEC from './config.js';
+import { MODAL_CLISE_SEC } from './config.js';
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
