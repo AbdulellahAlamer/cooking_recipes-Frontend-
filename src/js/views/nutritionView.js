@@ -3,16 +3,16 @@ class Nutrition {
 
   render(data) {
     const markup = this._generateMarkup(data);
+    console.log('rrrrrrrrr');
     this._parentEL.insertAdjacentHTML('afterbegin', markup);
   }
 
   _generateMarkup(data) {
     return `
     <a class="btn--small recipe__btn" href="${data}">
-          <span>Nutrition</span>
-          <svg class="search__icon">
-            <use href="http://localhost:1234/icons.dfd7a6db.svg?1673887752880#icon-arrow-right"></use>
-          </svg>
+        <span>Nutrition</span>
+        <svg class="search__icon">
+        </svg>
     </a>
     `;
   }

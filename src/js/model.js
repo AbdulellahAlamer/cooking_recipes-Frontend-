@@ -49,7 +49,6 @@ export const loadSearch = async function (item) {
   try {
     const data = await Get_Json(`${API_URL}?search=${item}`);
     state.search.query = item;
-    console.log(state.search.query);
     state.search.result = data.data.recipes.map(el => {
       return {
         id: el.id,
@@ -79,6 +78,7 @@ export const CaloriesIMG = async function () {
   const data = await fetch(
     `https://api.spoonacular.com/recipes/${getID()}/nutritionLabel.png?apiKey=fce16d4c6a454383856dc7f912483cbf`
   );
+  console.log(data);
   return data;
 };
 
