@@ -30,6 +30,7 @@ const controllRecipe = async function () {
 
     bookmark.update(model.state.bookmarks); // from me
     if (!model.state.search.query) return;
+    console.log('fdfdfdfdfddfdfd');
     nutritionView.render(model.CaloriesIMG());
   } catch {
     recipeView.renderError();
