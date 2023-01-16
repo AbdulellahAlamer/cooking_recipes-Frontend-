@@ -29,9 +29,9 @@ const controllRecipe = async function () {
     console.log(model.state.recipe);
 
     bookmark.update(model.state.bookmarks); // from me
-    if (!model.state.search.query) return;
+    // if (!model.state.search.query) return;
     console.log('fdfdfdfdfddfdfd');
-    nutritionView.render(model.CaloriesIMG());
+    // nutritionView.render(model.CaloriesIMG());
   } catch {
     recipeView.renderError();
     console.log('controllRecipe line 32');
