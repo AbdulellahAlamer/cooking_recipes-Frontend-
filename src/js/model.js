@@ -1,5 +1,6 @@
 import { Get_Json, sendJSON } from './helpers.js';
 import { API_URL, RES_PER_PAGE } from './config';
+import { async } from 'regenerator-runtime';
 
 export const state = {
   recipe: {},
@@ -48,6 +49,7 @@ export const loadSearch = async function (item) {
   try {
     const data = await Get_Json(`${API_URL}?search=${item}`);
     state.search.query = item;
+    console.log(state.search.query);
     state.search.result = data.data.recipes.map(el => {
       return {
         id: el.id,
@@ -62,6 +64,22 @@ export const loadSearch = async function (item) {
     console.error(err);
     throw err;
   }
+};
+
+export const getID = async function () {
+  const data = await fetch(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=fce16d4c6a454383856dc7f912483cbf&query=${state.search.query}`
+  );
+  const id = data[0].id;
+  console.log(id);
+  return id;
+};
+
+export const CaloriesIMG = async function () {
+  const data = await fetch(
+    `https://api.spoonacular.com/recipes/${getID()}/nutritionLabel.png?apiKey=fce16d4c6a454383856dc7f912483cbf`
+  );
+  return data;
 };
 
 export const getSearchResultPage = function (page = state.search.curentPage) {
