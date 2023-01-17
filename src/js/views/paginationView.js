@@ -36,7 +36,6 @@ class Pagination extends View {
                 <use href="${icons}#icon-arrow-right"></use>
             </svg>
         </button>
-        ${viewCurentPage}
         `;
     }
     //  'last page';
@@ -50,7 +49,6 @@ class Pagination extends View {
           </svg>
               <span>Page ${curPage - 1}</span>
       </button>
-      ${viewCurentPage}
       `;
     }
     //  'other pages';
@@ -72,36 +70,10 @@ class Pagination extends View {
           </svg>
               <span>Page ${curPage - 1}</span>
         </button>
-        ${viewCurentPage}
         `;
     }
     //  'only  1 page';
     return '';
   }
-
-  //   reer2() {
-  //     // const pagesLimt = Math.ceil(model.state.search.result.length / 10);
-  //     // console.log(pagesLimt);
-  //   }
-  //   nextMarkup(page) {
-  //     return `
-  //     <button class="btn--inline pagination__btn--next">
-  //             <span>Page ${page}</span>
-  //         <svg class="search__icon">
-  //             <use href="${icons}#icon-arrow-right"></use>
-  //         </svg>
-  //     </button>
-  //     `;
-  //   }
-  //   prevMarkup(page) {
-  //     return `
-  //     <button class="btn--inline pagination__btn--prev">
-  //         <svg class="search__icon">
-  //             <use href="${icons}#icon-arrow-left"></use>
-  //         </svg>
-  //             <span>Page ${page}</span>
-  //     </button>
-  //     `;
-  //   }
 }
 export default new Pagination();
