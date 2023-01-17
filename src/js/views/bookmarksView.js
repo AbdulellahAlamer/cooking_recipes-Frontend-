@@ -12,7 +12,6 @@ class bookmark extends View {
       const btn = e.target.closest('.btn--dele');
       if (!btn) return;
       const href = btn.closest('.preview__link').href.slice(-24);
-      console.log(href);
 
       handler(href);
     });

@@ -36,6 +36,7 @@ class Pagination extends View {
                 <use href="${icons}#icon-arrow-right"></use>
             </svg>
         </button>
+        ${viewCurentPage}
         `;
     }
     //  'last page';
@@ -49,6 +50,7 @@ class Pagination extends View {
           </svg>
               <span>Page ${curPage - 1}</span>
       </button>
+      ${viewCurentPage}
       `;
     }
     //  'other pages';
@@ -70,6 +72,7 @@ class Pagination extends View {
           </svg>
               <span>Page ${curPage - 1}</span>
         </button>
+        ${viewCurentPage}
         `;
     }
     //  'only  1 page';
