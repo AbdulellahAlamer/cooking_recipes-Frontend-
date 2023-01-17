@@ -10,7 +10,6 @@ import bookmark from './views//bookmarksView';
 import resultView from './views/resultView';
 import addRecipeView from './views/addRecipeView.js';
 import { MODAL_CLISE_SEC } from './config.js';
-import nutritionView from './views/nutritionView.js';
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
@@ -18,7 +17,7 @@ const controllRecipe = async function () {
   try {
     const hach = window.location.hash.slice(1);
     if (!hach) return;
-    console.log('hahahahahhahahahha');
+
     recipeView.renderSpener();
 
     ResultView.update(model.getSearchResultPage());
@@ -27,12 +26,7 @@ const controllRecipe = async function () {
 
     recipeView.render(model.state.recipe);
 
-    console.log(model.state.recipe);
-
     bookmark.update(model.state.bookmarks); // from me
-    // if (!model.state.search.query) return;
-    console.log('fdfdfdfdfddfdfd');
-    // nutritionView.render(model.CaloriesIMG());
   } catch {
     recipeView.renderError();
     console.log('controllRecipe line 32');

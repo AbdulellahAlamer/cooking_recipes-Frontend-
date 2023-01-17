@@ -65,23 +65,6 @@ export const loadSearch = async function (item) {
   }
 };
 
-export const getID = async function () {
-  const data = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=fce16d4c6a454383856dc7f912483cbf&query=${state.search.query}`
-  );
-  const id = data[0].id;
-  console.log(id);
-  return id;
-};
-
-export const CaloriesIMG = async function () {
-  const data = await fetch(
-    `https://api.spoonacular.com/recipes/${getID()}/nutritionLabel.png?apiKey=fce16d4c6a454383856dc7f912483cbf`
-  );
-  console.log(data);
-  return data;
-};
-
 export const getSearchResultPage = function (page = state.search.curentPage) {
   state.search.curentPage = page;
   const start = (page - 1) * state.search.resultPerPage;
