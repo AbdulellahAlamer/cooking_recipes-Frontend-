@@ -90,6 +90,15 @@ const controllAddRecipe = async function (recipe) {
   }
 };
 
+const deleteBookmark = function (href) {
+  console.log('working to Delllllettttte');
+  model.deleteBookmark(href);
+  console.log(model.state.recipe);
+  console.log(model.state.bookmarks);
+  recipeView.update(model.state.recipe);
+  bookmark.render(model.state.bookmarks);
+};
+
 const int = function () {
   bookmark.addHandlerRender(controllRenderBookmarks);
   recipeView.addHandlerRender(controllRecipe);
@@ -98,5 +107,6 @@ const int = function () {
   SearchView.addEvent(controllSearch);
   Pagination.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controllAddRecipe);
+  bookmark.addHandlerDeleteBookmark(deleteBookmark);
 };
 int();

@@ -1,5 +1,6 @@
 import View from './View.js';
 import icons from 'url:../../img/icons.svg'; // Parcel 2
+import { state } from '../model.js';
 
 class PreviewView extends View {
   _parentElement = '';
@@ -24,6 +25,17 @@ class PreviewView extends View {
               </svg>
             </div>
           </div>
+          ${
+            state.bookmarks.includes(this._data)
+              ? `
+          <button class="btn--tiny btn--dele">
+            <svg>
+              <use href="${icons}#icon-trush"></use>
+            </svg>
+          </button>
+          `
+              : ''
+          }
         </a>
       </li>
     `;
