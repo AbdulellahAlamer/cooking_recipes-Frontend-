@@ -2,7 +2,7 @@
   "name": "frokify",
   "version": "1.0.0",
   "description": "Ricepy application",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel index.html"
